@@ -1,0 +1,37 @@
+This is a project to port CyanogenMod to the Nvidia Shield
+(nvidia-roth target.) Right now it's very incomplete, and
+probably 90% unusable.
+
+I'm aiming for 100% source usage, aside from graphics. No
+precompiled apks or kernels - unlike that one xda project
+which was a vanilla kernel. Nvidia has provided more
+than enough for this task to be possible.
+
+Usage
+-------------------------------
+ * Install the build requirements. Obviously.
+ * Sync cyanogenmod's source code. Add the xml
+   to local manifests.
+ * . build/envsetup
+ * setpaths
+ * lunch full_roth-eng
+ * (optional) export OUT=...
+ * make -jX
+ * cd $OUT
+ * fastboot flash ...
+ * Done
+
+What is done
+-------------------------------
+ * Recovery image builds, and boots. We can mount stuff
+   and use adb shell.
+
+What is broken
+-------------------------------
+ * In recovery, screen is sideways. Shield is physically
+   unable to rotate, I need to build a fix in. However,
+   despite head-turning, it's working.
+
+What currently needs to be done
+-------------------------------
+ * Build an entire system.img to see how/if it works.
