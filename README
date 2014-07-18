@@ -1,3 +1,5 @@
+* WARNING - Build currently broken. It was fine until I put this up, I swear. Sync'd repos are unable to build.
+
 This is a project to port CyanogenMod to the Nvidia Shield
 (nvidia-roth target.) Right now it's very incomplete, and
 probably 90% unusable.
