@@ -1,13 +1,18 @@
 * WARNING - Build currently broken. It was fine until I put this up, I swear. Sync'd repos are unable to build.
+* EDIT    - I'm going to investigate this soon - unfortunately I'm out of HD space (240GB ssd) and my
+*           desktop is rendered unbootable from the latest kernel update to gentoo (idk why)
+*           I'll solve the desktop issue soon but for now it sits
 
 This is a project to port CyanogenMod to the Nvidia Shield
 (nvidia-roth target.) Right now it's very incomplete, and
-probably 90% unusable.
+probably 90% unusable. (scratch that, unusable. period.
+for now at least)
 
-I'm aiming for 100% source usage, aside from graphics. No
-precompiled apks or kernels - unlike that one xda project
-which was a vanilla kernel. Nvidia has provided more
-than enough for this task to be possible.
+I'm aiming for 100% source usage, aside from graphics blobs
+if necessary. No precompiled apks or kernels - unlike that
+one xda project that added root which was a vanilla kernel.
+Nvidia has provided more than enough for this task to be
+possible, albeit frustrating.
 
 Usage
 -------------------------------
@@ -16,11 +21,12 @@ Usage
    to local manifests.
  * . build/envsetup
  * setpaths
- * lunch full_roth-eng
+ * lunch full_roth-(eng | userdebug | user)
  * (optional) export OUT=...
+ * (optional) ccache setup?
  * make -jX
  * cd $OUT
- * fastboot flash ...
+ * fastboot flash ...files...
  * Done
 
 What is done
@@ -32,8 +38,10 @@ What is broken
 -------------------------------
  * In recovery, screen is sideways. Shield is physically
    unable to rotate, I need to build a fix in. However,
-   despite head-turning, it's working.
+   despite head-turning, it's working. Just a pain.
 
 What currently needs to be done
 -------------------------------
  * Build an entire system.img to see how/if it works.
+ * I may have done stuff against the wrong branch.
+   cm-jb apparently =/= cm-10
